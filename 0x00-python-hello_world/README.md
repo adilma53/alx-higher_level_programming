@@ -2,7 +2,7 @@
 
 ### Welcome to the alx-higher_level_programming repository. This repository contains various Python and Shell scripts serving different purposes, each explained below:
 
-- **0-run:** A Shell script that runs a Python script. The Python file name is stored in the environment variable `$PYFILE`.
+- `**0-run:**` A Shell script that runs a Python script. The Python file name is stored in the environment variable `$PYFILE`.
 
 - **1-run_inline:** A Shell script that runs Python code. The Python code is stored in the environment variable `$PYCODE`.
 
