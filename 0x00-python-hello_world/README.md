@@ -1,3 +1,5 @@
+![Sample Image](https://github.com/adilma53/alx-higher_level_programming/blob/main/0x00-python-hello_world/download.jpeg)
+
 # alx-higher_level_programming Repository
 
 Welcome to the alx-higher_level_programming repository. This repository contains various Python and Shell scripts serving different purposes, each explained below:
