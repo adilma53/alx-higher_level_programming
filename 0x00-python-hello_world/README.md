@@ -1,6 +1,6 @@
 ![Sample Image](https://github.com/adilma53/alx-higher_level_programming/blob/main/0x00-python-hello_world/download.jpeg)
 
-## Welcome to the alx-higher_level_programming repository. This repository contains various Python and Shell scripts serving different purposes, each explained below:
+#### Welcome to the alx-higher_level_programming repository. This repository contains various Python and Shell scripts serving different purposes, each explained below:
 
 - **0-run:** A Shell script that runs a Python script. The Python file name is stored in the environment variable `$PYFILE`.
 
