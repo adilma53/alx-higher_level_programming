@@ -1,4 +1,6 @@
-![Sample Image](https://github.com/adilma53/alx-higher_level_programming/blob/main/0x00-python-hello_world/download.jpeg)
+<div style="display: flex; justify-content: center;">
+  <img src="https://github.com/adilma53/alx-higher_level_programming/blob/main/0x00-python-hello_world/download.jpeg" alt="Sample Image">
+</div>
 
 ### Welcome to the alx-higher_level_programming repository. This repository contains various Python and Shell scripts serving different purposes, each explained below:
 
