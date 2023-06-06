@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-a = 97
+c = 97
 
 while a <= 122:
-    print('{}' .format(chr(a)), end="")
-    a += 1
+    print('{}' .format(chr(c)), end="")
+    c += 1
