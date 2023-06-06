@@ -2,6 +2,6 @@
 
 c = 97
 
-while a <= 122:
+while c <= 122:
     print('{}' .format(chr(c)), end="")
     c += 1
