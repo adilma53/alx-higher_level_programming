@@ -2,8 +2,6 @@
 
 def uppercase(s):
     i = 0
-    if s == "":
-        print()
     for c in s:
         i += 1
         if ord(c) >= 97 and ord(c) <= 122:
