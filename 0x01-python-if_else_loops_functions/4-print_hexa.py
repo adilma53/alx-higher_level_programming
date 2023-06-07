@@ -3,5 +3,5 @@
 hex = 0
 
 while hex <= 98:
-    print("{} = 0x{:02x}".format(hex, hex))
-    hex += 1
+    print("{} = {:#02x}".format(hex, hex))
+    hex += 
