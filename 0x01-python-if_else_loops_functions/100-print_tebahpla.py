@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 
-for i in range(90, 64, -1):
-    print("{:c}{:c}".format(i + 32, i), end="")
+for i in range(ord('z'), ord('a') - 1, -1):
+    print(chr(i).upper() if i % 2 == 0 else chr(i).lower(), end='')
+
+print()
