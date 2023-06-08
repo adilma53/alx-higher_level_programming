@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """Return the value of a + b"""
+    """calculates (a+b)"""
 
 from add_0 import add
 
