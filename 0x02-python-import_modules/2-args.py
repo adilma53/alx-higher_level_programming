@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 if __name__ == '__main__':
+    """test"""
     from sys import argv
+    """ test2 """
 
 
 argv.pop(0)
