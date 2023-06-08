@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import sys
+if __name__ == '__main__':
+    import sys
+
 
 args = sys.argv
 args.pop(0)
