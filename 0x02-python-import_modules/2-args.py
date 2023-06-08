@@ -1,15 +1,15 @@
 #!/usr/bin/python3
+
 if __name__ == '__main__':
-    import sys
+    from sys import argv
 
 
-args = sys.argv
-args.pop(0)
+argv.pop(0)
 
 i = 1
 
-print(f"{len(args)} argument:")
+print("{} argument:".format(len(argv)))
 
-for arg in args:
+for arg in argv:
     print("{}: {}".format(i, arg))
     i += 1
