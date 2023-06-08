@@ -8,7 +8,9 @@ argv.pop(0)
 
 i = 1
 
-print("{} argument:".format(len(argv)))
+len = len(argv)
+
+print("{} argument:".format(len) if len > 0 else "{} argument.".format(len))
 
 for arg in argv:
     print("{}: {}".format(i, arg))
