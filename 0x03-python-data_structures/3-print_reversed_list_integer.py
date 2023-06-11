@@ -8,6 +8,3 @@ def print_reversed_list_integer(my_list=None):
     while i >= 0:
         print("{:d}".format(my_list[i]))
         i -= 1
-
-
-print_reversed_list_integer([1, 2, 3, 4, 5])
