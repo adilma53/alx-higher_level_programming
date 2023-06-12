@@ -1,22 +1,31 @@
 #include "lists.h"
 
+void reverse_list(listint_t **head)
+{
+    listint_t *prev = NULL;
+    listint_t *current = *head;
+    listint_t *next = NULL;
 
+    while (current != NULL)
+    {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
 
-/**
- * is_palindrome - checks if a singly linked list is a palindrome
- * @head: double pointer to the head of the list
- * Return: 1 if palindrome, 0 otherwise
- */
+    *head = prev;
+}
+
 int is_palindrome(listint_t **head)
 {
     listint_t *slow = *head;
     listint_t *fast = *head;
     listint_t *prev = NULL;
-    listint_t *mid = NULL;
-    int isPalindrome = 1;
+    listint_t *ptr1, *ptr2;
 
     if (*head == NULL || (*head)->next == NULL)
-        return (1);
+        return 1;
 
     while (fast != NULL && fast->next != NULL)
     {
@@ -25,62 +34,24 @@ int is_palindrome(listint_t **head)
         slow = slow->next;
     }
 
-    if (fast != NULL)
-    {
-        mid = slow;
-        slow = slow->next;
-    }
-
     prev->next = NULL;
+    reverse_list(&slow);
+    ptr1 = *head;
+    ptr2 = slow;
 
-
-    listint_t *current = slow;
-    listint_t *next = NULL;
-    listint_t *prev2 = NULL;
-
-    while (current != NULL)
+    while (ptr1 != NULL && ptr2 != NULL)
     {
-        next = current->next;
-        current->next = prev2;
-        prev2 = current;
-        current = next;
-    }
-
-    
-    listint_t *first = *head;
-    listint_t *second = prev2;
-
-    while (second != NULL)
-    {
-        if (first->n != second->n)
+        if (ptr1->value != ptr2->value)
         {
-            isPalindrome = 0;
-            break;
+            reverse_list(&slow);
+            prev->next = slow;
+            return 0;
         }
-        first = first->next;
-        second = second->next;
+        ptr1 = ptr1->next;
+        ptr2 = ptr2->next;
     }
 
-    
-    current = prev2;
-    prev2 = NULL;
-    while (current != NULL)
-    {
-        next = current->next;
-        current->next = prev2;
-        prev2 = current;
-        current = next;
-    }
-
-    if (mid != NULL) 
-    {
-        prev->next = mid;
-        mid->next = prev2;
-    }
-    else
-    {
-        prev->next = prev2;
-    }
-
-    return isPalindrome;
+    reverse_list(&slow);
+    prev->next = slow;
+    return 1;
 }
