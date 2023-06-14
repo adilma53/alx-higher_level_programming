@@ -5,15 +5,12 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
 
-    for key in a_dictionary:
-        max_n = a_dictionary[key]
-        break
-
-    key = ""
+    max_k = None
+    max_v = None
 
     for i, j in a_dictionary.items():
-        if j > max_n:
-            max_n = j
-            key = i
+        if j is None or j > max_v:
+            max_v = j
+            max_k = i
 
-    return key
+    return max_k
