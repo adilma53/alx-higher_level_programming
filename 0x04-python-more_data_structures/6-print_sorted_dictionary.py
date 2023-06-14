@@ -3,7 +3,7 @@
 
 def print_sorted_dictionary(a_dictionary):
 
-    sorted_dict = dict(sorted(a_dictionary.items()))
+    sorted_dict = sorted(a_dictionary.items())
 
     for key in sorted_dict:
         print(key + ':', sorted_dict[key])
