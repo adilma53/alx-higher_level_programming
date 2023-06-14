@@ -4,12 +4,12 @@ def best_score(a_dictionary):
     if a_dictionary is None:
         return None
 
-    max_score = None
-    best_key = None
+    max_k = None
+    max_v = None
 
-    for key, value in a_dictionary.items():
-        if max_score is None or value > max_score:
-            max_score = value
-            best_key = key
+    for i, j in a_dictionary.items():
+        if max_k is None or j > max_k:
+            max_k = j
+            max_v = i
 
-    return best_key
+    return max_v
