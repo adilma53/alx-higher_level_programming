@@ -12,7 +12,7 @@ def best_score(a_dictionary):
 
     
     key = ""
-    for i,j in a_dictionary:
+    for i,j in a_dictionary.items():
         if j > max_n:
             max_n = j
             key = i
