@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 def best_score(a_dictionary):
 
     if a_dictionary is None:
@@ -10,12 +9,11 @@ def best_score(a_dictionary):
         max_n = a_dictionary[key]
         break
 
-    
     key = ""
-    
-    for i,j in a_dictionary.items():
+
+    for i, j in a_dictionary.items():
         if j > max_n:
             max_n = j
             key = i
-    
+
     return key
