@@ -2,7 +2,7 @@
 
 def best_score(a_dictionary):
 
-    if not a_dictionary:
+    if a_dictionary is None:
         return None
 
     max_k = None
@@ -14,3 +14,5 @@ def best_score(a_dictionary):
             max_k = i
 
     return max_k
+
+
