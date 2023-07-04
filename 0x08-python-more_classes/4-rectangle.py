@@ -6,7 +6,7 @@ class Rectangle:
     """Representation of a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initializes the rectangle"""
+        """Initializes the rectangle with width and height"""
         self.width = width
         self.height = height
 
@@ -40,25 +40,27 @@ class Rectangle:
 
     def area(self):
         """Calculates the area of the rectangle"""
-        return self.__width * self.__height
+        return self.__height * self.width
 
     def perimeter(self):
         """Calculates the perimeter of the rectangle"""
-        return 2 * (self.__width + self.__height)
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        return (2 * (self.__height + self.__width))
 
     def __str__(self):
         """Returns a string representation of the rectangle"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        rectangle_str = ""
-        for _ in range(self.__height):
-            rectangle_str += "#" * self.__width + "\n"
-        return rectangle_str[:-1]
+        empty_string = ""
+        if self.__height == 0 or self.__height == 0:
+            return empty_string
+        for i in range(self.__height):
+            empty_string += "#" * self.__width
+            if i != self.__height - 1:
+                empty_string += '\n'
+        return empty_string
 
     def __repr__(self):
         """Returns a string representation of the rectangle object"""
-        return f"Rectangle({self.__width}, {self.__height})"
-
-    def __del__(self):
-        """Deletes the rectangle object and prints a message"""
-        print("Bye rectangle...")
+        empty_string = "Rectangle(" + str(self.__width)
+        empty_string += ", " + str(self.__height) + ")"
+        return empty_string
