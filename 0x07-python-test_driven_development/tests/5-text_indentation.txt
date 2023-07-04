@@ -1,0 +1,22 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+>>> text_indentation("    what's up man.")
+what's up man.
+<BLANKLINE>
+>>> text_indentation("    ")
+>>> text_indentation("  man. It has been long time ago. where have you been?")
+man.
+<BLANKLINE>
+It has been long time ago.
+<BLANKLINE>
+where have you been?
+<BLANKLINE>
+>>> text_indentation(2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/abderrahman/Desktop/alx-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 16, in text_indentation
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+>>>
