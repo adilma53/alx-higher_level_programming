@@ -19,7 +19,7 @@ def matrix_divided(matrix, div):
     if not isinstance(matrix, list) or
     any(not isinstance(row, list) for row in matrix):
 
-    raise TypeError(matrix_error)
+        raise TypeError(matrix_error)
 
     row_size = len(matrix[0])
     if any(len(row) != row_size for row in matrix):
