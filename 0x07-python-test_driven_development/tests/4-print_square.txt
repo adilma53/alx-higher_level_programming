@@ -11,10 +11,6 @@ Should print a square if size is integer
     #
 >>> print_square(False)
 
-=======================================================================
-Traceback (most recent call last):
-TypeError: size must be an integer
-=======================================================================
 
 >>> print_square('x')
 Traceback (most recent call last):
@@ -54,10 +50,6 @@ Traceback (most recent call last):
 TypeError: size must be an integer
 
 
-=======================================================================
-Traceback (most recent call last):
-ValueError: size must be >= 0
-=======================================================================
 
 >>> print_square(-1)
 Traceback (most recent call last):
@@ -69,10 +61,6 @@ Traceback (most recent call last):
 ...
 ValueError: size must be >= 0
 
-=======================================================================
-Traceback (most recent call last):
-TypeError: size must be an integer
-=======================================================================
 
 >>> print_square(-1.11)
 Traceback (most recent call last):
