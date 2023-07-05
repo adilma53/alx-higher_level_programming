@@ -1,12 +1,5 @@
 #include <Python.h>
 
-/**
- * print_python_string - ...
- *
- * @p: ....
- *
- */
-
 void print_python_string(PyObject *p)
 {
 	Py_UNICODE *unicode_data;
