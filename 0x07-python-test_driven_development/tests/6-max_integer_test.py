@@ -1,62 +1,70 @@
 #!/usr/bin/python3
-""" test max integer"""
+"""
+Module to find the max integer
+"""
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """ ----------- """
+    """
+    Test the max_integer function
+    """
 
-    def test_with_int(self):
-        "" - ---------- """
-        list = [1, 2, 5, 200]
-        output = max_integer(list)
-        self.assertEqual(output, 200)
+    def test_max_integer(self):
+        '''
+        Test if integer is max integer
+        '''
+        result = max_integer([1, 4, 3, 2])
+        self.assertEqual(result, 4)
+        result = max_integer([12, 9, 7, 2])
+        self.assertEqual(result, 12)
 
-    def test_with_float(self):
-        "" ----------- """
-        list = [0.4, 50.7, 50.9]
-        output = max_integer(list)
-        self.assertEqual(output, 50.9)
+    def test_isint(self):
+        '''
+        Test to check variable against integer
+        '''
+        var = 1
+        self.assertTrue(max_integer([var, 2]) == 2)
+        x = 5
+        self.assertTrue(max_integer([1, x]) == x)
 
-    def test_with_string(self):
-        "" - ---------- """
-        list = ['a', 'b', 1]
-        self.assertRaises(TypeError, max_integer, list)
+    def test_same_entry(self):
+        '''
+        Test to check max int if same
+        '''
+        a = 50
+        self.assertEqual(max_integer([a, a, a, a]), a)
 
-    def test_it_empty(self):
-        "" ----------- """
-        list = []
-        output = max_integer(list)
-        self.assertEqual(output, None)
+    def test_float_integer(self):
+        '''
+        Test to see if float is max integer
+        '''
+        self.assertEqual(max_integer([4.0, 3, 2]), 4.0)
 
-    def test_as_not_list(self):
-        "" - ---------- """
-        list = 9
-        self.assertRaises(TypeError, max_integer, list)
+    def test_one_entry(self):
+        '''
+        Test to check if only one entry
+        '''
+        self.assertEqual(max_integer([10]), 10)
 
-    def test_as_unique(self):
-        "" ----------- """
-        list = [23]
-        output = max_integer(list)
-        self.assertEqual(output, 23)
+    def test_negative_integer(self):
+        '''
+        Test only negative integers
+        '''
+        self.assertEqual(max_integer([-1, -2, -5]), -1)
 
-    def test_with_same_value(self):
-        "" - ---------- """
-        list = [9, 9, 9]
-        output = max_integer(list)
-        self.assertEqual(output, 9)
+    def test_no_argument(self):
+        '''
+        Test that None is returned if no argument
+        '''
+        self.assertEqual(max_integer(), None)
 
-    def test_with_none(self):
-        "" ----------- """
-        self.assertRaises(TypeError, max_integer, None)
+    def test_empty_list(self):
+        '''
+        Test if list is empty
+        '''
+        self.assertEqual(max_integer([]), None)
 
-    def string_test(self):
-        "" ----------- """
-        list = ['man', 'woman']
-        output = max_integer(list)
-        self.assertEqual(output, 'man')
-
-
-if __name__ == '__main__':
-    unittest.main()
+    if __name__ == '__main__':
+        unittest.main()
