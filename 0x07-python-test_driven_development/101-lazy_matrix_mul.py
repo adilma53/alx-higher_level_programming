@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-
+import numpy as np
 """
 Lazy Matrix Multiplication
 """
 
-import numpy as np
-
 
 def lazy_matrix_mul(m_a, m_b):
     """
-    Multiplies two matrices
+    Multiples two matrices
     """
     try:
-        result = np.matmul(m_a, m_b)
-    except Exception as e:
-        raise e
-    return result
+        res = np.matmul(m_a, m_b)
+    except:
+        raise
+    return res
