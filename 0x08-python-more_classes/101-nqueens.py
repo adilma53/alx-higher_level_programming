@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-"""N QUEEN PROBLEM"""
+"""Module is to solve the N-Queens challenge problem"""
 from sys import argv
 
 
-def checkspot(board, row, column):
+def checkspot(board, r, c):
     n = len(board) - 1
-    if board[row][column]:
+    if board[r][c]:
         return 0
-    for r in range(row):
-        if board[r][column]:
+    for row in range(r):
+        if board[row][c]:
             return 0
-    i = row
-    j = column
+    i = r
+    j = c
     while i > 0 and j > 0:
         i -= 1
         j -= 1
         if board[i][j]:
             return 0
-    i = row
-    j = column
+    i = r
+    j = c
     while i > 0 and j < n:
         i -= 1
         j += 1
@@ -29,40 +29,40 @@ def checkspot(board, row, column):
 
 def initboard(n=4):
     b = []
-    for row in range(n):
-        b.append([0 for column in range(n)])
+    for r in range(n):
+        b.append([0 for c in range(n)])
     return b
 
 
 def findsoln(board, row):
-    for column in range(len(board)):
-        if checkspot(board, row, column):
-            board[row][column] = 1
+    for col in range(len(board)):
+        if checkspot(board, row, col):
+            board[row][col] = 1
             if row == len(board) - 1:
                 print(convtosoln(board))
-                board[row][column] = 0
+                board[row][col] = 0
                 continue
             if findsoln(board, row + 1):
                 return board
             else:
-                board[row][column] = 0
+                board[row][col] = 0
     return None
 
 
 def convtosoln(board):
     soln = []
     n = len(board)
-    for row in range(n):
-        for column in range(n):
-            if board[row][column]:
-                soln.append([row, column])
+    for r in range(n):
+        for c in range(n):
+            if board[r][c]:
+                soln.append([r, c])
     return soln
 
 
 def nqueens(n=4):
-    for column in range(n):
+    for col in range(n):
         board = initboard(n)
-        board[0][column] = 1
+        board[0][col] = 1
         findsoln(board, 1)
 
 
