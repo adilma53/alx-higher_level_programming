@@ -12,6 +12,6 @@ def lazy_matrix_mul(m_a, m_b):
     """
     try:
         res = py.matmul(m_a, m_b)
-    except:
-        raise
+    except Exception as e:
+        raise e
     return res
