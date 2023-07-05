@@ -1,81 +1,75 @@
 #!/usr/bin/python3
-"""Module is to solve the N-Queens challenge problem"""
-from sys import argv
+import sys
 
+def is_valid(board, row, col, n):
+    # Check if there is a queen in the same column
+    for i in range(row):
+        if board[i][col] == 1:
+            return False
 
-def checkspot(board, r, c):
-    n = len(board) - 1
-    if board[r][c]:
-        return 0
-    for row in range(r):
-        if board[row][c]:
-            return 0
-    i = r
-    j = c
-    while i > 0 and j > 0:
+    # Check if there is a queen in the upper-left diagonal
+    i, j = row, col
+    while i >= 0 and j >= 0:
+        if board[i][j] == 1:
+            return False
         i -= 1
         j -= 1
-        if board[i][j]:
-            return 0
-    i = r
-    j = c
-    while i > 0 and j < n:
+
+    # Check if there is a queen in the upper-right diagonal
+    i, j = row, col
+    while i >= 0 and j < n:
+        if board[i][j] == 1:
+            return False
         i -= 1
         j += 1
-        if board[i][j]:
-            return 0
-    return 1
 
+    # If there are no conflicts, the move is valid
+    return True
 
-def initboard(n=4):
-    b = []
-    for r in range(n):
-        b.append([0 for c in range(n)])
-    return b
+def solve_n_queens(n):
+    board = [[0 for i in range(n)] for j in range(n)]
+    solutions = []
+    solve_n_queens_helper(n, board, 0, solutions)
+    return solutions
 
+def solve_n_queens_helper(n, board, row, solutions):
+    # If we've placed all the queens, we've found a solution
+    if row == n:
+        solution = []
+        for i in range(n):
+            for j in range(n):
+                if board[i][j] == 1:
+                    solution.append([i, j])
+        solutions.append(solution)
+        return
 
-def findsoln(board, row):
-    for col in range(len(board)):
-        if checkspot(board, row, col):
-            board[row][col] = 1
-            if row == len(board) - 1:
-                print(convtosoln(board))
-                board[row][col] = 0
-                continue
-            if findsoln(board, row + 1):
-                return board
-            else:
-                board[row][col] = 0
-    return None
-
-
-def convtosoln(board):
-    soln = []
-    n = len(board)
-    for r in range(n):
-        for c in range(n):
-            if board[r][c]:
-                soln.append([r, c])
-    return soln
-
-
-def nqueens(n=4):
+    # Try placing a queen in each column of the current row
     for col in range(n):
-        board = initboard(n)
-        board[0][col] = 1
-        findsoln(board, 1)
+        if is_valid(board, row, col, n):
+            board[row][col] = 1
+            solve_n_queens_helper(n, board, row + 1, solutions)
+            board[row][col] = 0
 
-
-if __name__ == "__main__":
-    if len(argv) != 2:
+def main():
+    # Parse command-line arguments
+    if len(sys.argv) != 2:
         print("Usage: nqueens N")
-        exit(1)
+        sys.exit(1)
+
     try:
-        n = int(argv[1])
-    except:
+        n = int(sys.argv[1])
+    except ValueError:
         print("N must be a number")
-        exit(1)
+        sys.exit(1)
+
     if n < 4:
         print("N must be at least 4")
-        exit(1)
-    nqueens(n)
+        sys.exit(1)
+
+    # Solve the problem and print the solutions
+    solutions = solve_n_queens(n)
+    for solution in solutions:
+        print(solution)
+
+if __name__ == "__main__":
+    main()
