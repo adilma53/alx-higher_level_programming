@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+
+
 import sys
+
 
 def is_valid(board, row, col, n):
     # Check if there is a queen in the same column
@@ -26,11 +29,13 @@ def is_valid(board, row, col, n):
     # If there are no conflicts, the move is valid
     return True
 
+
 def solve_n_queens(n):
     board = [[0 for i in range(n)] for j in range(n)]
     solutions = []
     solve_n_queens_helper(n, board, 0, solutions)
     return solutions
+
 
 def solve_n_queens_helper(n, board, row, solutions):
     # If we've placed all the queens, we've found a solution
@@ -49,6 +54,7 @@ def solve_n_queens_helper(n, board, row, solutions):
             board[row][col] = 1
             solve_n_queens_helper(n, board, row + 1, solutions)
             board[row][col] = 0
+
 
 def main():
     # Parse command-line arguments
