@@ -1,7 +1,5 @@
-
-
 #!/usr/bin/python3
-
+"""the N queens problem"""
 import sys
 
 
