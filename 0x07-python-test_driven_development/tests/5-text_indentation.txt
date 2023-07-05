@@ -1,10 +1,5 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-=======================================================================
-Traceback (most recent call last):
-TypeError: text must be a string
-=======================================================================
-
 
 
 >>> text_indentation(1)
@@ -51,9 +46,6 @@ TypeError: text must be a string
 Traceback (most recent call last):
 TypeError: text must be a string
 
-==========================================
-Output tests
-==========================================
 
 >>> text_indentation('Kevan.Victor.Madison')
 Kevan.
