@@ -1,19 +1,15 @@
 #!/usr/bin/python3
 
-
 class Node:
-    """ _____________ """
     def __init__(self, data, next_node=None):
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """ _____________ """
         return self._data
 
     @data.setter
-    """ _____________ """
     def data(self, value):
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
@@ -21,25 +17,20 @@ class Node:
 
     @property
     def next_node(self):
-        """ _____________ """
         return self._next_node
 
     @next_node.setter
     def next_node(self, value):
-        """ _____________ """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self._next_node = value
 
 
 class SinglyLinkedList:
-    """ _____________ """
     def __init__(self):
-        """ _____________ """
         self.__head = None
 
     def sorted_insert(self, value):
-        """ _____________ """
         new_node = Node(value)
         if not self.__head:
             self.__head = new_node
@@ -50,17 +41,14 @@ class SinglyLinkedList:
             return
 
         head_copy = self.__head
-        while head_copy.next_node and head_copy.next_node.data < value:
+        while head_copy and head_copy.next_node and head_copy.next_node.data < value:
             head_copy = head_copy.next_node
 
         new_node.next_node = head_copy.next_node
         head_copy.next_node = new_node
         return
 
-
-
     def __str__(self):
-        """ _____________ """
         value = []
         tmp = self.__head
         while tmp is not None:
