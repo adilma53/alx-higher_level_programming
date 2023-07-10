@@ -7,9 +7,7 @@ Import module:
     >>> MyList = __import__('1-my_list').MyList
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Test case #0: A test case to order a disordered list of positive integers
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     >>> my_list = MyList()
     >>> my_list.append(1)
@@ -26,9 +24,7 @@ Test case #0: A test case to order a disordered list of positive integers
     >>> print(my_list)
     [1, 4, 2, 3, 5]
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Test case #4: A test case to sort a list of negative integers
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     >>> my_list = MyList()
     >>> my_list.append(-1)
