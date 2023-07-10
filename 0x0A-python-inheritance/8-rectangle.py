@@ -2,10 +2,9 @@
 """class"""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-bg = BaseGeometry()
 
 
-class Rectangle(bg):
+class Rectangle(BaseGeometry):
     """rectangle class"""
 
     def __init__(self, width, height):
