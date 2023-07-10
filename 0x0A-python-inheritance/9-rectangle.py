@@ -7,7 +7,7 @@ class BaseGeometry:
 
     def area(self):
         """ function that raises ("area() is not implemented")"""
-        raise Exception("area() is not implemented")
+        raise Exception("area () is not implemented")
 
     def integer_validator(self, name, value):
         """
@@ -26,13 +26,13 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """Represents a rectangle class"""
+    """rectangle class"""
 
     def __init__(self, width, height):
-        """ init values
+        """ constructor
         Args:
-            width (int): The width of the rectangle
-            height (int): The height of the Rectangle
+            width (int): width
+            height (int): height
         """
         self.integer_validator("width", width)
         self.__width = width
@@ -40,9 +40,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
-        """ return the area"""
+        """ area of rectangle"""
         return self.__width * self.__height
 
     def __str__(self):
-        """print the rectangle"""
+        """ print rectangle """
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
