@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """read from file and print to stdout"""
 
 
