@@ -11,6 +11,7 @@ class Base:
         """
         constrcutopr for __nb_objects attribute
         """
+
         if id is not None:
             self.id = id
         else:
