@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 """base class"""
+
 
 class Base:
     """base class to manage the id attribute for all future classes"""
