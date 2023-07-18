@@ -19,7 +19,6 @@ class Base:
     def __init__(self, id=None):
         """
         Initializes a Base instance with a unique ID.
-        If 'id' is provided, it will be used as the ID.
         """
         if id is None:
             Base.__nb_objects += 1
@@ -31,7 +30,6 @@ class Base:
     def to_json_string(list_data):
         """
         Converts a list of dictionaries to a JSON string.
-        If the list is empty or None, returns '[]'.
         """
         if list_data is None or len(list_data) == 0:
             return '[]'
@@ -41,7 +39,6 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Saves a list of objects to a JSON file.
-        The filename is based on the class name.
         """
         filename = cls.__name__ + '.json'
 
@@ -56,7 +53,6 @@ class Base:
     def from_json_string(json_string):
         """
         Converts a JSON string to a list of dictionaries.
-        If the JSON string is empty or None, returns an empty list.
         """
         if json_string is None or len(json_string) == 0:
             return []
@@ -66,7 +62,6 @@ class Base:
     def create(cls, **dictionary):
         """
         Creates a new instance of the class using the provided dictionary.
-        For 'Square' and 'Rectangle', default dimensions are used if not provided.
         """
         if cls.__name__ == 'Square':
             dummy = cls(3)
