@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module defining the Rectangle class.
+module defining the Rectangle class.
 """
 
 from models.base import Base
@@ -8,12 +8,12 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-    Rectangle class, a subclass of Base.
+    rectangle class, a subclass of Base.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Initializes a Rectangle instance.
+        initializes a Rectangle instance.
         """
         super().__init__(id)
 
@@ -29,51 +29,51 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """get the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, param):
-        """Set the width of the rectangle."""
+        """set the width of the rectangle."""
         self._check_integer_parameter(param, 'width')
         self.__width = param
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """get the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, param):
-        """Set the height of the rectangle."""
+        """set the height of the rectangle."""
         self._check_integer_parameter(param, 'height')
         self.__height = param
 
     @property
     def x(self):
-        """Get the x-coordinate of the rectangle."""
+        """get the x-coordinate of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, param):
-        """Set the x-coordinate of the rectangle."""
+        """set the x-coordinate of the rectangle."""
         self._check_integer_parameter(param, 'x')
         self.__x = param
 
     @property
     def y(self):
-        """Get the y-coordinate of the rectangle."""
+        """get the y-coordinate of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, param):
-        """Set the y-coordinate of the rectangle."""
+        """set the y-coordinate of the rectangle."""
         self._check_integer_parameter(param, 'y')
         self.__y = param
 
     def _check_integer_parameter(self, value, param):
         """
-        Check if the value is an integer and validate its range.
+        check if the value is an integer and validate its range.
         """
         if not isinstance(value, int):
             raise TypeError(param + ' must be an integer')
@@ -85,11 +85,11 @@ class Rectangle(Base):
             raise ValueError(param + ' must be >= 0')
 
     def area(self):
-        """Calculate the area of the rectangle."""
+        """calculate the area of the rectangle."""
         return self.__width * self.__height
 
     def display(self):
-        """Display the rectangle using '#' characters."""
+        """display the rectangle using '#' characters."""
         if self.__y > 0:
             print('\n' * self.__y, end='')
 
@@ -100,14 +100,14 @@ class Rectangle(Base):
             print('#' * self.__width)
 
     def __str__(self):
-        """Return a string representation of the rectangle."""
+        """return a string representation of the rectangle."""
         return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
             self.id, self.x, self.y, self.width, self.height
         )
 
     def update(self, *args, **kwargs):
         """
-        Update the attributes of the rectangle.
+        update the attributes of the rectangle.
         """
         argc = len(args)
         kwargc = len(kwargs)
@@ -126,7 +126,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-        Convert the rectangle object to a dictionary.
+        convert the rectangle object to a dictionary.
         """
         return {
             'id': self.id,

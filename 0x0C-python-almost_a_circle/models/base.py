@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A model that contains a Base class to manage
+a model that contains a Base class to manage
 the id attribute of all classes that extend
 from Base and avoid duplicate the same code.
 """
@@ -11,14 +11,14 @@ import json
 
 class Base:
     """
-    Base class to manage unique IDs for objects.
+    base class to manage unique IDs for objects.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
-        Initializes a Base instance with a unique ID.
+        initializes a Base instance with a unique ID.
         """
         if id is None:
             Base.__nb_objects += 1
@@ -29,7 +29,7 @@ class Base:
     @staticmethod
     def to_json_string(list_data):
         """
-        Converts a list of dictionaries to a JSON string.
+        converts a list of dictionaries to a JSON string.
         """
         if list_data is None or len(list_data) == 0:
             return '[]'
@@ -38,7 +38,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """
-        Saves a list of objects to a JSON file.
+        saves a list of objects to a JSON file.
         """
         filename = cls.__name__ + '.json'
 
@@ -52,7 +52,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        Converts a JSON string to a list of dictionaries.
+        converts a JSON string to a list of dictionaries.
         """
         if json_string is None or len(json_string) == 0:
             return []
@@ -61,7 +61,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Creates a new instance of the class using the provided dictionary.
+        creates a new instance of the class using the provided dictionary.
         """
         if cls.__name__ == 'Square':
             dummy = cls(3)
@@ -76,7 +76,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        Loads objects from a JSON file and returns a list of instances.
+        loads objects from a JSON file and returns a list of instances.
         """
         filename = cls.__name__ + '.json'
 
