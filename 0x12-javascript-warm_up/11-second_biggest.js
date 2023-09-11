@@ -12,6 +12,6 @@ if (args.length <= 1)
 {
     const largest = Math.max(...args);
     const removeLargest = [...args.filter(num => num !== largest];
-    const secondLargest = Math.max(removeLargest);
+    const secondLargest = Math.max(...removeLargest);
     console.log(secondLargest);
 }
