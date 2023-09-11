@@ -5,7 +5,7 @@ const args = process.argv.slice(2).map(Number);
 if (args.length <= 1) {
   console.log(0);
 } else {
-  const largest = Math.max(...args);
-  const removeLargest = [...args.filter(num => num !== largest)];
-  console.log(Math.max(removeLargest));
+  const max = Math.max(...args);
+  const secondLargest = Math.max(...args.filter(num => num !== max));
+  console.log(secondLargest);
 }
