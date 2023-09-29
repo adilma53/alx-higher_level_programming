@@ -1,3 +1,3 @@
 #!/bin/bash
-# send put request to 0.0.0.0:5000/catch_me and get the res body
-curl -X POST -H "Content-Type: application/json" -d '{"catch_me": true}' http://0.0.0.0:5000/catch_me
+# Makes a request to 0.0.0.0:5000/catch_me that gets the message "You got me!".
+curl -sL -X PUT -H "Content-Type: application/json" -d "user_id=98" 0.0.0.0:5000/catch_me
