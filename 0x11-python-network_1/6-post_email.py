@@ -8,8 +8,8 @@ and display the res body
 import requests
 from sys import argv
 
-
-url = argv[1]
-mail = {"email": argv[2]}
-data = requests.post(url, data=mail)
-print(data.text)
+if __name__ == "__main__":
+    url = argv[1]
+    mail = {"email": argv[2]}
+    req = requests.post(url, data=mail)
+    print(req.text)
