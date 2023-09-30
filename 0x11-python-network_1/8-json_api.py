@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     try:
         user_info = response.json()
-        
+
         if user_info:
             print("[{}] {}".format(user_info.get('id'), user_info.get('name')))
         else:
