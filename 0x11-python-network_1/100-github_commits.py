@@ -5,6 +5,7 @@ GitHub API: Fetch the latest 10 commits from a repository
 from sys import argv
 import requests
 
+
 if __name__ == "__main__":
     url = "https://api.github.com/repos/{}/{}/commits".format(
         argv[1], argv[2]
