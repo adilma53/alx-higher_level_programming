@@ -2,21 +2,20 @@
 """
 GitHub API: Fetch the latest 10 commits from a repository
 """
-from sys import argv
+import sys
 import requests
 
 
 if __name__ == "__main__":
     url = "https://api.github.com/repos/{}/{}/commits".format(
-        argv[1], argv[2]
-    )
+        sys.argv[2], sys.argv[1])
+
     req = requests.get(url)
-    body = req.json()
+    commits = req.json()
     try:
         for i in range(10):
             print("{}: {}".format(
-                body[i].get("sha"),
-                body[i].get("commit").get("author").get("name")
-            ))
+                commits[i].get("sha"),
+                commits[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
