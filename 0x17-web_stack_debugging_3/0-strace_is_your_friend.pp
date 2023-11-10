@@ -1,6 +1,6 @@
-# fix why Apache is returning a 500 error
+# fix apache propblem
 
-exec { 'Fix wordpress':
-   command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
-   provider => shell,
+exec { 'Fix wordpress site':
+  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
+  provider => shell,
 }
